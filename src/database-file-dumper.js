@@ -143,9 +143,11 @@ DatabaseToFileDumper.prototype.loadAssets = function(){
                 dumpAssets.command += ' --query ' + this.db.collection.query;
             }
         }
-    }
 
-    dumpAssets.command += ' --oplog ';
+    } else {
+
+        dumpAssets.command += ' --oplog ';
+    }
 
     if(this.output){
         dumpAssets.fullPath = '';
